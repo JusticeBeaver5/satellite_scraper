@@ -1,0 +1,1 @@
+This script scrapes satellite data such as name and id from https://www.n2yo.com/ using selenium and writes it to csv file.
