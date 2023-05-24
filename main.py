@@ -21,17 +21,17 @@ def main(url):
     driver.get(url)
     tbody = driver.find_element(By.XPATH, '/html/body/table[1]/tbody/tr/td[2]/table[2]/tbody')
     # print(tbody.find_elements(By.XPATH, '//tr')[1].text)
-    for i in range(4, 208):
+    for i in range(4, 204):
         name = tbody.find_elements(By.XPATH, '//tr')[0].find_elements(By.XPATH, f'/html/body/table[1]/tbody/tr/td[2]/table[2]/tbody/tr[{i}]/td[1]')[0].text
-        id = tbody.find_elements(By.XPATH, '//tr')[0].find_elements(By.XPATH, f'/html/body/table[1]/tbody/tr/td[2]/table[2]/tbody/tr[{i}]/td[2]')[0].text
-        write_to_csv(f'{name},{id}')
-        # print(f'{name},{id}')
+        sat_id = tbody.find_elements(By.XPATH, '//tr')[0].find_elements(By.XPATH, f'/html/body/table[1]/tbody/tr/td[2]/table[2]/tbody/tr[{i}]/td[2]')[0].text
+        write_to_csv([[name,sat_id]])
+        print(f'{name},{sat_id}')
     driver.quit()
 
 
 
 if __name__=='__main__':
-    main()
+    main(url)
 
 
 
