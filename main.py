@@ -1,3 +1,11 @@
+'''
+This method is for parsing satellite ids from web page at n2yo.com.
+Should not be used anymore since there is a better way of requesting it using API.
+This code will be kept only for educational purpose on how to use selenium.
+For requesting satellites use request_satellites.py
+
+'''
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
