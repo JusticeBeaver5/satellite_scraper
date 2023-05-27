@@ -11,6 +11,7 @@ everything.
 import requests
 import os
 from dotenv import load_dotenv
+import csv
 
 load_dotenv()
 
@@ -31,11 +32,17 @@ def make_request(angle, key):
     return r.json()
 
 
+def write_csv(data):
+    with open('database.csv','a', encoding='utf-8') as file:
+        writer = csv.writer(file, delimiter=',', lineterminator = '\n')
+        writer.writerows(data)
+
+
 data = make_request(angle, key)
 
 
+
 for i, item in enumerate(data['above']):
-    name = data['above'][i]['satname']
     name = data['above'][i]['satname']
     lat = data['above'][i]['satlat']
     long = data['above'][i]['satlng']
